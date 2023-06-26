@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pedProvCompletos" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="adefb96f-0e25-41ee-a423-e8a9c1aaea76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select * from tblpedidos_proveedor]]>
+	</queryString>
+	<field name="id_proped" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ped_id_proveedor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_usuario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="proped_fecha" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total_proped" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="propedestado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="186" splitType="Stretch">
+			<ellipse>
+				<reportElement x="804" y="24" width="32" height="34" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="66378994-9a49-494e-896f-aaf9b18f7a87"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="48" y="156" width="182" height="17" uuid="c153a0ec-6ed2-4d93-b0df-93395096a532"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[electricosestrada@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="139" width="100" height="17" uuid="c869977f-9603-4877-95aa-85a8734fc9af"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[3206257680]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="741" y="-22" width="32" height="34" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="745dad49-13c4-4f81-8f06-5b8ab11bd5c1"/>
+			</ellipse>
+			<line>
+				<reportElement x="362" y="122" width="1" height="51" uuid="316666e2-767e-4d47-a6e6-528bb0beb4da"/>
+			</line>
+			<image>
+				<reportElement x="2" y="0" width="585" height="132" uuid="7c350a1a-130e-49f4-8bc7-78c0c86f2f95"/>
+				<imageExpression><![CDATA["logo_web.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="347" y="22" width="382" height="46" forecolor="#000000" uuid="12bc231b-b8c0-479a-8953-90c1051fb960"/>
+				<textElement>
+					<font fontName="Verdana" size="36" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Pedidos Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="122" width="182" height="17" uuid="a03f3546-6c61-4699-a157-7b0fe473db0b"/>
+				<textElement>
+					<font size="12" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Ubicación]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="703" y="93" width="99" height="20" forecolor="#FFFFFF" uuid="eb686322-cd54-4de3-a4b0-de866083cd50"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="185" width="802" height="1" uuid="c9dabcd7-8c0d-4787-8fd7-b3e135b91a7f"/>
+				<graphicElement>
+					<pen lineWidth="2.5" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="401" y="139" width="77" height="17" uuid="b584fb2b-0d25-4590-b33f-c898e967403f"/>
+				<imageExpression><![CDATA["map.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="401" y="156" width="77" height="17" uuid="63a0c569-4b2e-479b-8bf4-821403271b42"/>
+				<imageExpression><![CDATA["addres.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="20" y="156" width="77" height="17" uuid="566a98ff-d0cb-422d-a4d3-9dca8e768209"/>
+				<imageExpression><![CDATA["email.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="20" y="122" width="182" height="17" uuid="ca1e325d-47f9-474f-92d6-02e2cfce1078"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contacto]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="738" y="-22" width="32" height="34" forecolor="#666666" backcolor="#666666" uuid="972ed906-f5a2-4fb5-b0b0-4d9d836f12e6"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="425" y="139" width="100" height="17" uuid="749ab88e-133a-4e95-985b-43212afa4167"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Santa Fé, Bogotá.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="156" width="180" height="17" uuid="dd2a2352-c44c-4a9b-86d5-f8d0d605008f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Cra. 12 # 15 - 84 oficina 206]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="757" y="-34" width="83" height="79" forecolor="#CC0000" backcolor="#CC0000" uuid="1d038a65-a67c-4f5b-8db3-00b983738bc5"/>
+			</ellipse>
+			<ellipse>
+				<reportElement x="802" y="24" width="32" height="34" forecolor="#666666" backcolor="#666666" uuid="25218aa5-7782-4e1a-bc6a-b404561bf4ae"/>
+			</ellipse>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="94" width="802" height="19" forecolor="#000000" backcolor="#DE5C5C" uuid="59785a6e-6942-406a-a210-93f822ce38b4"/>
+			</frame>
+			<image>
+				<reportElement x="20" y="139" width="77" height="17" uuid="af9f28fb-a15b-406a-8f65-e121f591cdb9"/>
+				<imageExpression><![CDATA["phone.png"]]></imageExpression>
+			</image>
+			<ellipse>
+				<reportElement x="741" y="-22" width="32" height="34" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="9a10eacd-a2b3-470a-b1cc-9187e3a8e823"/>
+			</ellipse>
+			<ellipse>
+				<reportElement x="804" y="24" width="32" height="34" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="a4aca0ef-5b1c-4752-83d3-e0586ab0fa17"/>
+			</ellipse>
+			<ellipse>
+				<reportElement x="740" y="-23" width="32" height="34" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="5f1f9add-81d5-4c67-beec-4c02d0565694"/>
+			</ellipse>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="702" y="93" width="98" height="20" forecolor="#FFFFFF" uuid="401a901c-83a0-4d86-b074-28201d225784"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="-2" width="802" height="25" forecolor="#666666" backcolor="#666666" uuid="0187fc6d-9e10-4fef-834f-1d38185ee858"/>
+			</frame>
+			<staticText>
+				<reportElement style="Column header" x="5" y="0" width="132" height="20" forecolor="#FFFFFF" uuid="4c2c4593-1d2e-4ae7-88fa-4a93f326d985"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id Pedido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="137" y="0" width="132" height="20" forecolor="#FFFFFF" uuid="375c4fcd-8fef-46cc-a4c7-900f4323feb4"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="269" y="0" width="132" height="20" forecolor="#FFFFFF" uuid="a8570961-fecb-493f-9dde-cc011e1150da"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="401" y="0" width="132" height="20" forecolor="#FFFFFF" uuid="b08fb9d5-2fa2-4c5e-b16b-587e35d95baa"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="533" y="0" width="132" height="20" forecolor="#FFFFFF" uuid="d8f435b5-6547-4911-a692-9b691fdefa28"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="665" y="0" width="132" height="20" forecolor="#FFFFFF" uuid="d40d5486-1f15-4800-930d-d9a066d01d81"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="f9b7cfc8-cc4a-42a6-86f9-58e058c18815"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="132" height="18" uuid="0df41b07-de9c-40d7-b0db-92c0bb12d33a"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_proped}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="132" y="0" width="132" height="18" uuid="1935e41b-f1b8-449a-945e-b1c191cded88"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ped_id_proveedor}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="264" y="0" width="132" height="18" uuid="bc5e2f4a-befb-445d-b684-4f80e9b10b6e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_usuario}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="396" y="0" width="132" height="18" uuid="a7ef390c-3b1f-477a-8760-199766ef3356"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{proped_fecha}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="528" y="0" width="132" height="18" uuid="759ffb7d-9df8-428b-a67a-528c65d10731"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Total_proped}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="660" y="0" width="132" height="18" uuid="d9a26c24-61af-4c4b-aedb-026b46acbd46"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{propedestado}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="797" height="1" uuid="77478f5e-f3ff-49b7-955d-6b91fe11d158"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<rectangle radius="7">
+				<reportElement x="2" y="0" width="802" height="30" forecolor="#ECECEC" backcolor="#CCCCCC" uuid="01a09907-5b1d-4ac7-9eb5-c8daf9dd41d6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="574" y="7" width="223" height="20" uuid="f377cd6c-4aec-4452-aa6e-dab8b674385e"/>
+				<textElement>
+					<font fontName="SansSerif" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electricos Industriales Estrada E I E S.A.S]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,213 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8/06/2023, 06:09:44 PM
+    Author     : Alexander
+*/
+
+:root {
+    --color-primary: #DE5C5C;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-backgroud: #f6f6f9;
+    --color-dark: #363949;
+    --color-info-dark: #7d8da1;
+    --color-dark-variant: #677486;
+    --color-warning: #ffbb55;
+    --color-light: rgba(163, 165, 185, 0.18);
+
+    --card--padding: 1.8rem;
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.container {
+    margin-top: 1rem;
+}
+
+.caja1 {
+    padding: 1rem;
+    background: white;
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    font-size: 13.5px;
+}
+
+.caja1:hover {
+    box-shadow: none;
+}
+
+.datos-usu,
+.datos-prov {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    flex: 1;
+    text-align: left;
+    padding-right: 10px;
+}
+.datos-usu .box-container button.buttonProd {
+    margin-top: 1rem;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+.datos-prov .box-container button.buttonProd {
+    margin-top: 1.3rem;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 13px;
+}
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}
+input[type="date"],
+input[type="text"],
+select {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}
+
+.select2-results__option {
+    background-color: #f1f1f1;
+    font-size: 12px;
+}
+
+.select2-container .select2-selection {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    border: none;
+    padding: 6px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.select2-container--default .select2-selection--single {
+    height: 41px;
+}
+
+.tabla1 {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 0.8rem;
+    padding: 10px;
+}
+
+.tabla1:hover {
+    box-shadow: none;
+}
+
+.tabla1 td,
+.tabla1 th {
+    border: none;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.generar-pedido {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.6rem;
+    width: 20%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-top: 60px;
+}
+
+.caja2 {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    font-size: 13.5px;
+}
+
+.datosproductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 12px;
+}
+
+.datosproductos label {
+    flex-basis: 20%;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.datosproductos input[type="text"],
+.datosproductos select {
+    flex-basis: 30%;
+    margin-bottom: 0.5rem;
+}
+
+.foto-prod {
+    flex-basis: 100%;
+    max-height: 145px;
+    margin-top: 1rem;
+    max-width: 100%;
+}
+
+.agregar {
+    flex-basis: 100%;
+    margin-top: 1rem;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.datos-usu .buttonProd {
+    
+    
+
+}

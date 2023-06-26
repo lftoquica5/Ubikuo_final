@@ -1,0 +1,784 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import ModeloVO.ClienteVO;
+import ModeloDAO.ClienteDAO;
+import java.util.ArrayList;
+import ModeloVO.usuarioVO;
+
+public final class Clientes_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(5);
+    _jspx_dependants.add("/sesiones.jsp");
+    _jspx_dependants.add("/menuGerente.jsp");
+    _jspx_dependants.add("/menuAdministrador.jsp");
+    _jspx_dependants.add("/menuVendedor.jsp");
+    _jspx_dependants.add("/menuAdministradorPunto.jsp");
+  }
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Inicio de sesión</title>\n");
+      out.write("    </head>\n");
+      out.write("\n");
+      out.write("    ");
+
+        response.setHeader("Pragma", "No-cache");
+        response.setHeader("Cache-control", "no-cache,no-store,must-revalidate");
+        response.setDateHeader("Expires", 0);
+    
+      out.write("\n");
+      out.write("    <body>\n");
+      out.write("        ");
+
+            // ...
+            String usuNombre = "", usuId = "", usuRol = "";
+
+            HttpSession buscarSesion = (HttpSession) request.getSession();
+
+            if (buscarSesion.getAttribute("datosUsuario") != null) {
+                usuarioVO usuVO = (usuarioVO) buscarSesion.getAttribute("datosUsuario");
+
+                usuNombre = usuVO.getUsunombre();
+                usuRol = usuVO.getUsu_id_rol();
+                usuId = usuVO.getId_usuario();
+
+                // Condiciona la visualización del contenido según el ID del rol
+                if (usuRol != null && usuRol.equals("4")) {
+                    // Mostrar contenido para el rol 3 (por ejemplo, gerente)
+        
+      out.write("\n");
+      out.write("        <!-- Aquí va el contenido para el rol 3 -->\n");
+      out.write("        ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <!------------------- Estilos Menu --------------------->\n");
+      out.write("        <link href=\"CSS/stylemenu.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <!------------------- Iconos --------------------->\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://unicons.iconscout.com/release/v4.0.0/css/line.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0\" />\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0\" />\n");
+      out.write("        <title>Inicio</title>\n");
+      out.write("    </head>s\n");
+      out.write("    <body>\n");
+      out.write("        <nav>\n");
+      out.write("            <!------------------- Logo --------------------->\n");
+      out.write("        <div class=\"logo-name\">\n");
+      out.write("            <div class=\"logo-image\">\n");
+      out.write("                <img src=\"ASSETS/logo_web - copia.png\" alt=\"\"/>\n");
+      out.write("            </div>\n");
+      out.write("            <span class=\"logo_name\">Electricos <span style=\"color: black;\">Estrada</span></span>\n");
+      out.write("        </div>\n");
+      out.write("            <!------------------- Barra Lateral --------------------->\n");
+      out.write("        <div class=\"menu-items\">\n");
+      out.write("            <ul class=\"nav-links\">\n");
+      out.write("                <li><a href=\"home.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-outlined\">inventory</i>\n");
+      out.write("                    <span class=\"link-name\">Inicio</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"Productos.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-outlined\">inventory</i>\n");
+      out.write("                    <span class=\"link-name\">Productos</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"Clientes.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-sharp\">face</i>\n");
+      out.write("                    <span class=\"link-name\">Clientes</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"Proveedor.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-sharp\">badge</i>\n");
+      out.write("                    <span class=\"link-name\">Proveedores</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"ConsultarPedidoProveedor.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-outlined\">local_shipping</i>\n");
+      out.write("                    <span class=\"link-name\">Pedido Proveedor</span>\n");
+      out.write("                </a></li>\n");
+      out.write("            </ul>\n");
+      out.write("            <!------------------- Cerrar Sesion --------------------->\n");
+      out.write("            <ul class=\"logout-mode\">\n");
+      out.write("                <li><a href=\"#\">\n");
+      out.write("                        <form method=\"post\" action=\"sesiones\">\n");
+      out.write("                        <button style=\"border: none;\"><i class=\"uil uil-signout\"></i></button>\n");
+      out.write("                        <span class=\"link-name\">Logout</span>\n");
+      out.write("                        <input type=\"hidden\" value=\"Cerrar Sesion\"> \n");
+      out.write("                        </form>\n");
+      out.write("                </a></li>   \n");
+      out.write("            </ul>\n");
+      out.write("        </div>\n");
+      out.write("    </nav>\n");
+      out.write("        <!------------------- Barra Superior --------------------->\n");
+      out.write("        <section class=\"dashboard\">\n");
+      out.write("            <div class=\"top\">\n");
+      out.write("                <i class=\"uil uil-bars sidebar-toggle\"></i>\n");
+      out.write("                <div class=\"text-header\">\n");
+      out.write("                    <b>Rol:</b>\n");
+      out.write("                    <small>Gerente</small>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("        </section>\n");
+      out.write("        <!------------------- Codigo Java --------------------->\n");
+      out.write("        <script src=\"JS/menu.js\" type=\"text/javascript\"></script>\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+      out.write("\n");
+      out.write("        ");
+
+        } else if (usuRol != null && usuRol.equals("2")) {
+            // Mostrar contenido para el rol 2 (por ejemplo, administrador)
+        
+      out.write("\n");
+      out.write("        <!-- Aquí va el contenido para el rol 2 -->\n");
+      out.write("        ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <!------------------- Estilos Menu --------------------->\r\n");
+      out.write("        <link href=\"CSS/stylemenu.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <!------------------- Iconos --------------------->\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://unicons.iconscout.com/release/v4.0.0/css/line.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0\" />\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0\" />\r\n");
+      out.write("        <title>Inicio</title>\r\n");
+      out.write("    </head>s\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <nav>\r\n");
+      out.write("            <!------------------- Logo --------------------->\r\n");
+      out.write("        <div class=\"logo-name\">\r\n");
+      out.write("            <div class=\"logo-image\">\r\n");
+      out.write("                <img src=\"ASSETS/logo_web - copia.png\" alt=\"\"/>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <span class=\"logo_name\">Electricos <span style=\"color: black;\">Estrada</span></span>\r\n");
+      out.write("        </div>\r\n");
+      out.write("            <!------------------- Barra Lateral --------------------->\r\n");
+      out.write("        <div class=\"menu-items\">\r\n");
+      out.write("            <ul class=\"nav-links\">\r\n");
+      out.write("                <li><a href=\"home.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-outlined\">inventory</i>\r\n");
+      out.write("                    <span class=\"link-name\">Inicio</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"Productos.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-outlined\">inventory</i>\r\n");
+      out.write("                    <span class=\"link-name\">Productos</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"Clientes.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-sharp\">face</i>\r\n");
+      out.write("                    <span class=\"link-name\">Clientes</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"pedido_1.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-sharp\">order_approve</i>\r\n");
+      out.write("                    <span class=\"link-name\">Pedido</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"Proveedor.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-sharp\">badge</i>\r\n");
+      out.write("                    <span class=\"link-name\">Proveedores</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"ConsultarPedidoProveedor.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-outlined\">local_shipping</i>\r\n");
+      out.write("                    <span class=\"link-name\">Pedido Proveedor</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"Cotizacion.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-sharp\">inactive_order</i>\r\n");
+      out.write("                    <span class=\"link-name\">Cotizacion</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"Usuarios.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-outlined\">account_circle</i>\r\n");
+      out.write("                    <span class=\"link-name\">Usuarios</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"Categorias.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-sharp\">category</i>\r\n");
+      out.write("                    <span class=\"link-name\">Categorias</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("                <li><a href=\"Roles.jsp\">\r\n");
+      out.write("                    <i class=\"material-symbols-sharp\">engineering</i>\r\n");
+      out.write("                    <span class=\"link-name\">Roles</span>\r\n");
+      out.write("                </a></li>\r\n");
+      out.write("            </ul>\r\n");
+      out.write("            <!------------------- Cerrar Sesion --------------------->\r\n");
+      out.write("            <ul class=\"logout-mode\">\r\n");
+      out.write("                <li><a href=\"#\">\r\n");
+      out.write("                        <form method=\"post\" action=\"sesiones\">\r\n");
+      out.write("                        <button style=\"border: none;\"><i class=\"uil uil-signout\"></i></button>\r\n");
+      out.write("                        <span class=\"link-name\">Logout</span>\r\n");
+      out.write("                        <input type=\"hidden\" value=\"Cerrar Sesion\"> \r\n");
+      out.write("                        </form>\r\n");
+      out.write("                </a></li>   \r\n");
+      out.write("            </ul>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </nav>\r\n");
+      out.write("        <!------------------- Barra Superior --------------------->\r\n");
+      out.write("        <section class=\"dashboard\">\r\n");
+      out.write("            <div class=\"top\">\r\n");
+      out.write("                <i class=\"uil uil-bars sidebar-toggle\"></i>\r\n");
+      out.write("                <div class=\"text-header\">\r\n");
+      out.write("                    <b>Rol:</b>\r\n");
+      out.write("                    <small>Administrador</small>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </section>\r\n");
+      out.write("        <!------------------- Codigo Java --------------------->\r\n");
+      out.write("        <script src=\"JS/menu.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
+      out.write("\n");
+      out.write("        ");
+
+        } else if (usuRol != null && usuRol.equals("3")) {
+            // Mostrar contenido para el rol 1 (por ejemplo, vendedor)
+        
+      out.write("\n");
+      out.write("        <!-- Aquí va el contenido para el rol 1 -->\n");
+      out.write("        ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <!------------------- Estilos Menu --------------------->\n");
+      out.write("        <link href=\"CSS/stylemenu.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <!------------------- Iconos --------------------->\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://unicons.iconscout.com/release/v4.0.0/css/line.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0\" />\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0\" />\n");
+      out.write("        <title>Inicio</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <nav>\n");
+      out.write("            <!------------------- Logo --------------------->\n");
+      out.write("        <div class=\"logo-name\">\n");
+      out.write("            <div class=\"logo-image\">\n");
+      out.write("                <img src=\"ASSETS/logo_web - copia.png\" alt=\"\"/>\n");
+      out.write("            </div>\n");
+      out.write("            <span class=\"logo_name\">Electricos <span style=\"color: black;\">Estrada</span></span>\n");
+      out.write("        </div>\n");
+      out.write("            <!------------------- Barra Lateral --------------------->\n");
+      out.write("        <div class=\"menu-items\">\n");
+      out.write("                        <ul class=\"nav-links\">\n");
+      out.write("                <li><a href=\"home.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-outlined\">inventory</i>\n");
+      out.write("                    <span class=\"link-name\">Inicio</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"pedido_1.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-sharp\">order_approve</i>\n");
+      out.write("                    <span class=\"link-name\">Pedido</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"Cotizacion.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-sharp\">inactive_order</i>\n");
+      out.write("                    <span class=\"link-name\">Cotizacion</span>\n");
+      out.write("                </a></li>\n");
+      out.write("            </ul>\n");
+      out.write("            <!------------------- Cerrar Sesion --------------------->\n");
+      out.write("            <ul class=\"logout-mode\">\n");
+      out.write("                <li><a href=\"#\">\n");
+      out.write("                        <form method=\"post\" action=\"sesiones\">\n");
+      out.write("                        <button style=\"border: none;\"><i class=\"uil uil-signout\"></i></button>\n");
+      out.write("                        <span class=\"link-name\">Logout</span>\n");
+      out.write("                        <input type=\"hidden\" value=\"Cerrar Sesion\"> \n");
+      out.write("                        </form>\n");
+      out.write("                </a></li>   \n");
+      out.write("            </ul>\n");
+      out.write("        </div>\n");
+      out.write("    </nav>\n");
+      out.write("        <!------------------- Barra Superior --------------------->\n");
+      out.write("        <section class=\"dashboard\">\n");
+      out.write("            <div class=\"top\">\n");
+      out.write("                <i class=\"uil uil-bars sidebar-toggle\"></i>\n");
+      out.write("                <div class=\"text-header\">\n");
+      out.write("                    <b>Rol:</b>\n");
+      out.write("                    <small>Vendedor</small>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("        </section>\n");
+      out.write("        <!------------------- Codigo Java --------------------->\n");
+      out.write("        <script src=\"JS/menu.js\" type=\"text/javascript\"></script>\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+      out.write("\n");
+      out.write("        ");
+
+        } else if (usuRol != null && usuRol.equals("5")) {
+            // Mostrar contenido para el rol 4 (por ejemplo, administrador de punto)
+        
+      out.write("\n");
+      out.write("        <!-- Aquí va el contenido para el rol 4 -->\n");
+      out.write("        ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <!------------------- Estilos Menu --------------------->\n");
+      out.write("        <link href=\"CSS/stylemenu.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <!------------------- Iconos --------------------->\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://unicons.iconscout.com/release/v4.0.0/css/line.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0\" />\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0\" />\n");
+      out.write("        <title>Inicio</title>\n");
+      out.write("    </head>s\n");
+      out.write("    <body>\n");
+      out.write("        <nav>\n");
+      out.write("            <!------------------- Logo --------------------->\n");
+      out.write("        <div class=\"logo-name\">\n");
+      out.write("            <div class=\"logo-image\">\n");
+      out.write("                <img src=\"ASSETS/logo_web - copia.png\" alt=\"\"/>\n");
+      out.write("            </div>\n");
+      out.write("            <span class=\"logo_name\">Electricos <span style=\"color: black;\">Estrada</span></span>\n");
+      out.write("        </div>\n");
+      out.write("            <!------------------- Barra Lateral --------------------->\n");
+      out.write("        <div class=\"menu-items\">\n");
+      out.write("            <ul class=\"nav-links\">\n");
+      out.write("                <li><a href=\"home.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-outlined\">inventory</i>\n");
+      out.write("                    <span class=\"link-name\">Inicio</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"Productos.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-outlined\">inventory</i>\n");
+      out.write("                    <span class=\"link-name\">Productos</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"Clientes.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-sharp\">face</i>\n");
+      out.write("                    <span class=\"link-name\">Clientes</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"pedido_1.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-sharp\">order_approve</i>\n");
+      out.write("                    <span class=\"link-name\">Pedido</span>\n");
+      out.write("                </a></li>\n");
+      out.write("                <li><a href=\"Cotizacion.jsp\">\n");
+      out.write("                    <i class=\"material-symbols-sharp\">inactive_order</i>\n");
+      out.write("                    <span class=\"link-name\">Cotizacion</span>\n");
+      out.write("                </a></li>\n");
+      out.write("            </ul>\n");
+      out.write("            <!------------------- Cerrar Sesion --------------------->\n");
+      out.write("            <ul class=\"logout-mode\">\n");
+      out.write("                <li><a href=\"#\">\n");
+      out.write("                        <form method=\"post\" action=\"sesiones\">\n");
+      out.write("                        <button style=\"border: none;\"><i class=\"uil uil-signout\"></i></button>\n");
+      out.write("                        <span class=\"link-name\">Logout</span>\n");
+      out.write("                        <input type=\"hidden\" value=\"Cerrar Sesion\"> \n");
+      out.write("                        </form>\n");
+      out.write("                </a></li>   \n");
+      out.write("            </ul>\n");
+      out.write("        </div>\n");
+      out.write("    </nav>\n");
+      out.write("        <!------------------- Barra Superior --------------------->\n");
+      out.write("        <section class=\"dashboard\">\n");
+      out.write("            <div class=\"top\">\n");
+      out.write("                <i class=\"uil uil-bars sidebar-toggle\"></i>\n");
+      out.write("                <div class=\"text-header\">\n");
+      out.write("                    <b>Rol:</b>\n");
+      out.write("                    <small>Administrador Punto</small>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("        </section>\n");
+      out.write("        <!------------------- Codigo Java --------------------->\n");
+      out.write("        <script src=\"JS/menu.js\" type=\"text/javascript\"></script>\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+      out.write("\n");
+      out.write("        ");
+
+        } else {
+            // Mostrar contenido para otros roles o acceso denegado
+        
+      out.write("\n");
+      out.write("        <!-- Aquí va el contenido para otros roles o mensaje de acceso denegado -->\n");
+      out.write("        <p>Acceso denegado.</p>\n");
+      out.write("        ");
+
+        }
+        } else {
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+        
+      out.write("\n");
+      out.write("\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>Clientes</title>\r\n");
+      out.write("        <link href=\"CSS/stylepopup.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <link href=\"CSS/principal.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <!--------------------- Iconos ------------------------------->\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css\">\r\n");
+      out.write("        <!--------------------- Alertas ------------------------------->\r\n");
+      out.write("        <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@10\"></script>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        ");
+      out.write("\r\n");
+      out.write("        ");
+ String successMessage = (String) request.getAttribute("mensajeExito"); 
+      out.write("\r\n");
+      out.write("        ");
+ if (successMessage != null) {
+      out.write("\r\n");
+      out.write("        <script>\r\n");
+      out.write("            Swal.fire({\r\n");
+      out.write("                icon: 'success',\r\n");
+      out.write("                title: '");
+      out.print( successMessage);
+      out.write("',\r\n");
+      out.write("            });\r\n");
+      out.write("        </script>\r\n");
+      out.write("        ");
+ } 
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        ");
+      out.write("\r\n");
+      out.write("        ");
+ String errorMessage = (String) request.getAttribute("mensajeError"); 
+      out.write("\r\n");
+      out.write("        ");
+ if (errorMessage != null) {
+      out.write("\r\n");
+      out.write("        <script>\r\n");
+      out.write("            Swal.fire({\r\n");
+      out.write("                icon: 'errors',\r\n");
+      out.write("                title: '");
+      out.print( errorMessage);
+      out.write("',\r\n");
+      out.write("            });\r\n");
+      out.write("        </script>\r\n");
+      out.write("        ");
+ } 
+      out.write("\r\n");
+      out.write("        <section class=\"main\">\r\n");
+      out.write("            <div class=\"dash-content\">\r\n");
+      out.write("                <div class=\"overview\">\r\n");
+      out.write("                    <div class=\"title\">\r\n");
+      out.write("                        <span class=\"text\">Clientes</span>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"boxes\">\r\n");
+      out.write("                        <div class=\"box box1\">\r\n");
+      out.write("                            <button class=\"open-popup\" data-popup=\"popup1\"><i class='bx bxs-plus-circle registrar'></i></button>\r\n");
+      out.write("                            <span class=\"text\">Registrar Cliente</span>\r\n");
+      out.write("                            <div class=\"popup\" id=\"popup1\">\r\n");
+      out.write("                                <div class=\"overlay\"></div>\r\n");
+      out.write("                                <div class=\"popup-content\">\r\n");
+      out.write("                                    <h2>Registrar Cliente</h2>\r\n");
+      out.write("                                    <form method= \"post\" action=\"Cliente\">\r\n");
+      out.write("                                        <div class=\"module-details\">\r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Cédula <span style=\"color: red;\">*</span></span>\r\n");
+      out.write("                                                <input type=\"text\" name =\"id_cliente\" placeholder=\"Cedula\" required>\r\n");
+      out.write("                                            </div> \r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Nombre(s) <span style=\"color: red;\">*</span></span>\r\n");
+      out.write("                                                <input type=\"text\" name =\"clinombre\" placeholder=\"Nombre(s)\" required>\r\n");
+      out.write("                                            </div>  \r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Apellido(s)<span style=\"color: red;\">*</span> </span>\r\n");
+      out.write("                                                <input type=\"text\" name =\"cliapellido\" placeholder=\"Apellido(s)\" required>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Correo <span style=\"color: red;\">*</span> </span>\r\n");
+      out.write("                                                <input type=\"email\" name =\"clicorreo\" placeholder=\"Correo Electronico\" required>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Dirección <span style=\"color: red;\">*</span> </span>\r\n");
+      out.write("                                                <input type=\"text\" name =\"clidireccion\" placeholder=\"Dirección\" required>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Telefono <span style=\"color: red;\">*</span> </span>\r\n");
+      out.write("                                                <input type=\"number\" name =\"clitelefono\" placeholder=\"Telefono\" required>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Descripción<span style=\"color: red;\">*</span></span>\r\n");
+      out.write("                                                <select name=\"clidescripcion\" id=\"catestado\">\r\n");
+      out.write("                                                    <option value=\"\">Seleccione...</option>\r\n");
+      out.write("                                                    <option value=\"credito\">Credito</option>\r\n");
+      out.write("                                                    <option value=\"natural\">Natural</option>\r\n");
+      out.write("                                                </select>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"controls\">\r\n");
+      out.write("                                            <a href=\"#\" class=\"cancelarbtn\">Cancelar</a>\r\n");
+      out.write("                                            <button class=\"registrarbtn\">Registrar Cliente</button>\r\n");
+      out.write("                                            <input  type=\"hidden\" name=\"opcion\" value=\"1\">\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                    </form>\r\n");
+      out.write("                                </div>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"box box3\">\r\n");
+      out.write("                            <button class=\"open-popup\" data-popup=\"popup3\"> <i class='bx bxs-report activos'></i></button>\r\n");
+      out.write("                            <div class=\"popup\" id=\"popup3\">\r\n");
+      out.write("                                <div class=\"overlay\"></div>\r\n");
+      out.write("                                <div class=\"popup-content\">\r\n");
+      out.write("                                    <h2>Reportes</h2>\r\n");
+      out.write("                                    <form action=\"generadorReportes.jsp\" method=\"post\">\r\n");
+      out.write("                                        <div class=\"module-detailsReportes\">\r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Clientes</span>\r\n");
+      out.write("                                                <button class=\"button\" type=\"submit\" name=\"reportName\" value=\"clientesTotales\">Descargar</button>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Cliente Natural</span>\r\n");
+      out.write("                                                <button class=\"button\" type=\"submit\" name=\"reportName\" value=\"clientesNaturales\">Descargar</button>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                            <div class=\"input-box\">\r\n");
+      out.write("                                                <span class=\"details\">Cliente Crédito</span>\r\n");
+      out.write("                                                <button class=\"button\" type=\"submit\" name=\"reportName\" value=\"clientesCredito\">Descargar</button>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                    </form>\r\n");
+      out.write("                                    <div class=\"controls\">\r\n");
+      out.write("                                        <a href=\"#\" class=\"cancelarbtn\">Cancelar</a>\r\n");
+      out.write("                                    </div>   \r\n");
+      out.write("                                </div>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                            <span class=\"text\">Generar Reporte</span>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"box box1\">\r\n");
+      out.write("                            <i class='bx bxs-user-check activos'></i>\r\n");
+      out.write("                            ");
+
+                                ClienteDAO clientesDAO = new ClienteDAO();
+                                int totalClientes = clientesDAO.getTotalClientes();
+                                out.println("<span class=\"number\">" + totalClientes + "</span>");
+                            
+      out.write("\r\n");
+      out.write("                            <span class=\"text\">Total</span>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"box box2\">\r\n");
+      out.write("                            <i class='bx bxs-user-detail activos'></i>\r\n");
+      out.write("                            ");
+
+                                ClienteDAO naturalesDAO = new ClienteDAO();
+                                int totalClientesNaturales = naturalesDAO.getTotalClientesNaturales();
+                                out.println("<span class=\"number\">" + totalClientesNaturales + "</span>");
+                            
+      out.write("\r\n");
+      out.write("                            <span class=\"text\">Naturales</span>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"box box3\">\r\n");
+      out.write("                            <i class='bx bxs-credit-card-alt activos' ></i>\r\n");
+      out.write("                            ");
+
+                                ClienteDAO creditoDAO = new ClienteDAO();
+                                int totalClientesCredito = creditoDAO.getTotalClientesCredito();
+                                out.println("<span class=\"number\">" + totalClientesCredito + "</span>");
+                            
+      out.write("\r\n");
+      out.write("                            <span class=\"text\">Crédito</span>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div id=\"customers\" class=\"table-data\">\r\n");
+      out.write("                    <div  class=\"order\">\r\n");
+      out.write("                        <div class=\"head\">\r\n");
+      out.write("                            <h3>Consultar Cliente</h3>\r\n");
+      out.write("                            <div class=\"buscar\">\r\n");
+      out.write("                                <input type=\"text\" id=\"buscador\" name=\"id_usuario\"class=\"buscar__input\" placeholder=\"Buscar\">\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                            <select class=\"selectico\" id=\"estado\">\r\n");
+      out.write("                                <option value=\"\">Todos</option>\r\n");
+      out.write("                                <option value=\"credito\">Credito</option>\r\n");
+      out.write("                                <option value=\"natural\">Natural</option>\r\n");
+      out.write("                            </select>\r\n");
+      out.write("                            <i class='bx bx-search'></i>\r\n");
+      out.write("                            <i class='bx bx-filter'></i>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <table>\r\n");
+      out.write("                            <thead>\r\n");
+      out.write("                                <tr>\r\n");
+      out.write("                                    <th>Identificación</th>\r\n");
+      out.write("                                    <th>Nombre</th>\r\n");
+      out.write("                                    <th>Correo</th>\r\n");
+      out.write("                                    <th>Dirección</th>\r\n");
+      out.write("                                    <th>Télefono</th>\r\n");
+      out.write("                                    <th>Descripción</th>\r\n");
+      out.write("                                    <th>Actualizar</th>\r\n");
+      out.write("                                </tr>\r\n");
+      out.write("                            </thead>\r\n");
+      out.write("                            ");
+
+                                ClienteDAO clienteDAO = new ClienteDAO();
+                                ArrayList<ClienteVO> listaClientes = clienteDAO.listarClientes();
+                                for (int i = 0; i < listaClientes.size(); i++) {
+                                    ClienteVO cliVO = listaClientes.get(i);
+                            
+      out.write("\r\n");
+      out.write("                            <tbody>\r\n");
+      out.write("                                <tr class=\"daticos\">\r\n");
+      out.write("                                    <td class=\"id_usuario\">");
+      out.print( cliVO.getId_cliente());
+      out.write("</td>\r\n");
+      out.write("                                    <td>");
+      out.print( cliVO.getClinombre());
+      out.write(' ');
+      out.print( cliVO.getCliapellido());
+      out.write("</td>\r\n");
+      out.write("                                    <td>");
+      out.print( cliVO.getClicorreo());
+      out.write("</td>\r\n");
+      out.write("                                    <td>");
+      out.print( cliVO.getClidireccion());
+      out.write("</td>\r\n");
+      out.write("                                    <td>");
+      out.print( cliVO.getClitelefono());
+      out.write("</td>\r\n");
+      out.write("                                    <td class=\"estado-usuario\"><span class=\"status ");
+      out.print(cliVO.getClidescripcion().equals("credito") ? "completed" : "inactive");
+      out.write('"');
+      out.write('>');
+      out.print(cliVO.getClidescripcion());
+      out.write("</span></td>\r\n");
+      out.write("                                    <td><button class=\"open-popup actualizar-usuario updatebutton\" data-popup=\"popup2\" data-cli-id=\"");
+      out.print(cliVO.getId_cliente());
+      out.write("\" data-cli-nombre=\"");
+      out.print(cliVO.getClinombre());
+      out.write("\" data-cli-apellido=\"");
+      out.print(cliVO.getCliapellido());
+      out.write("\" data-cli-correo=\"");
+      out.print(cliVO.getClicorreo());
+      out.write("\"\r\n");
+      out.write("                                                data-cli-telefono=\"");
+      out.print(cliVO.getClitelefono());
+      out.write("\" data-cli-descripcion=\"");
+      out.print(cliVO.getClidescripcion());
+      out.write("\" data-cli-direccion=\"");
+      out.print(cliVO.getClidireccion());
+      out.write("\">\r\n");
+      out.write("                                            <i class='bx bx-edit actualizar'></i></button>\r\n");
+      out.write("                                            ");
+}
+      out.write("\r\n");
+      out.write("                                        <div class=\"popup actualizar-popup\" id=\"popup2\">\r\n");
+      out.write("                                            <div class=\"overlay\"></div>\r\n");
+      out.write("                                            <div class=\"popup-content\">\r\n");
+      out.write("                                                <h2>Actualizar Clientes</h2>\r\n");
+      out.write("                                                <form method=\"post\" action=\"Cliente\">\r\n");
+      out.write("                                                    <div class=\"module-details\">\r\n");
+      out.write("                                                        <div class=\"input-box\">\r\n");
+      out.write("                                                            <span class=\"details\">Identificación <span style=\"color: red;\">*</span></span>\r\n");
+      out.write("                                                            <input type=\"number\" name =\"id_cliente\" placeholder=\"Identificación\" id=\"id_cliente\" readonly>\r\n");
+      out.write("                                                        </div>\r\n");
+      out.write("                                                        <div class=\"input-box\">\r\n");
+      out.write("                                                            <span class=\"details\">Nombre(s)<span style=\"color: red;\">*</span></span>\r\n");
+      out.write("                                                            <input type=\"text\" name =\"clinombre\" placeholder=\"Nombre\" id=\"clinombre\">\r\n");
+      out.write("                                                        </div>\r\n");
+      out.write("                                                        <div class=\"input-box\">\r\n");
+      out.write("                                                            <span class=\"details\">Apellido(s)<span style=\"color: red;\">*</span> </span>\r\n");
+      out.write("                                                            <input type=\"text\" name =\"cliapellido\" placeholder=\"Apellido(s)\" id=\"cliapellido\">\r\n");
+      out.write("                                                        </div>\r\n");
+      out.write("                                                        <div class=\"input-box\">\r\n");
+      out.write("                                                            <span class=\"details\">Correo <span style=\"color: red;\">*</span> </span>\r\n");
+      out.write("                                                            <input type=\"text\" name =\"clicorreo\" placeholder=\"Correo Electronico\" id=\"clicorreo\">\r\n");
+      out.write("                                                        </div>\r\n");
+      out.write("                                                        <div class=\"input-box\">\r\n");
+      out.write("                                                            <span class=\"details\">Dirección <span style=\"color: red;\">*</span> </span>\r\n");
+      out.write("                                                            <input type=\"text\" name =\"clidireccion\" placeholder=\"Dirección\" id=\"clidireccion\">\r\n");
+      out.write("                                                        </div>\r\n");
+      out.write("                                                        <div class=\"input-box\">\r\n");
+      out.write("                                                            <span class=\"details\">Télefono <span style=\"color: red;\">*</span> </span>\r\n");
+      out.write("                                                            <input type=\"text\" name =\"clitelefono\" placeholder=\"Telefono\" id=\"clitelefono\">\r\n");
+      out.write("                                                        </div>\r\n");
+      out.write("                                                        <div class=\"input-box\">\r\n");
+      out.write("                                                            <span class=\"details\">Descripción<span style=\"color: red;\">*</span></span>\r\n");
+      out.write("                                                            <select name=\"clidescripcion\" id=\"clidescripcion\">\r\n");
+      out.write("                                                                <option value=\"credito\">Credito</option>\r\n");
+      out.write("                                                                <option value=\"natural\">Natural</option>\r\n");
+      out.write("                                                            </select>\r\n");
+      out.write("                                                        </div>\r\n");
+      out.write("                                                    </div>\r\n");
+      out.write("                                                    <div class=\"controls\">\r\n");
+      out.write("                                                        <a href=\"#\" class=\"cancelarbtn\">Cancelar</a>\r\n");
+      out.write("                                                        <button class=\"registrarbtn\">Actualizar Usuario</button>\r\n");
+      out.write("                                                        <input  type=\"hidden\" name=\"opcion\" value=\"2\">\r\n");
+      out.write("                                                    </div>   \r\n");
+      out.write("                                                </form>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                    </td>\r\n");
+      out.write("                                </tr>\r\n");
+      out.write("                            </tbody>\r\n");
+      out.write("                        </table>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </section>\r\n");
+      out.write("        <script src=\"JS/buscador.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <script src=\"JS/popupcliente.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}

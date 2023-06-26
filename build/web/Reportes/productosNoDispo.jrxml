@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="productosNoDsipo" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="10493070-fcaa-42eb-b7ce-aa765be761dd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+    `tblproductos`.`id_prod`,
+    `tblproductos`.`prodnombre`,
+    `tblproductos`.`prodstock_disp`,
+    `tblcategorias`.`catnombre`,
+    `tblproveedores`.`pronombre`,
+    `tblproductos`.`prodestado`
+FROM
+    `ubikuo_final`.`tblproductos`
+    INNER JOIN `ubikuo_final`.`tblcategorias` ON `tblproductos`.`prod_id_categoria` = `tblcategorias`.`id_cat`
+    INNER JOIN `ubikuo_final`.`tblproveedores` ON `tblproductos`.`prod_id_prov` = `tblproveedores`.`id_prov`
+WHERE
+    `tblproductos`.`prodstock_disp` = 0;]]>
+	</queryString>
+	<field name="id_prod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prodnombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prodstock_disp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="catnombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pronombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prodestado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="189" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="585" y="61" width="158" height="29" forecolor="#000000" backcolor="#666666" uuid="b4175720-4aca-455f-9dca-0b12f98d54a9"/>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="589" y="58" width="154" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="85296de5-3f86-4756-bd88-70c634dcc8c6"/>
+			</frame>
+			<staticText>
+				<reportElement style="SubTitle" x="620" y="55" width="102" height="29" forecolor="#000000" uuid="3e591cc2-6a8d-4060-867f-8dc3d68246ec"/>
+				<textElement>
+					<font fontName="Serif" size="22" isBold="false" isItalic="true" pdfEncoding="Cp1252"/>
+				</textElement>
+				<text><![CDATA[Agotados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="515" y="12" width="212" height="46" forecolor="#000000" uuid="54268c6e-c1d3-4d27-8274-c9288bc7dec9"/>
+				<textElement>
+					<font fontName="Verdana" size="36" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Productos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="399" y="156" width="77" height="17" uuid="55714593-8bc7-4fa8-85f3-784bc9da511e"/>
+				<imageExpression><![CDATA["addres.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="18" y="122" width="182" height="17" uuid="ef950ca8-4b92-4f15-8b6d-7927d60ccb51"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contacto]]></text>
+			</staticText>
+			<image>
+				<reportElement x="18" y="156" width="77" height="17" uuid="3a08d850-608b-4571-ab56-b92356166a1c"/>
+				<imageExpression><![CDATA["email.png"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="-2" y="94" width="802" height="19" forecolor="#000000" backcolor="#DE5C5C" uuid="94a54870-e404-4a86-85ec-6a05a2318023"/>
+			</frame>
+			<staticText>
+				<reportElement x="396" y="122" width="182" height="17" uuid="95fc2c41-bc85-4112-be47-00c5c578ee87"/>
+				<textElement>
+					<font size="12" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Ubicación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="156" width="180" height="17" uuid="ed6c922a-355c-4d76-8589-a73814874bd4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Cra. 12 # 15 - 84 oficina 206]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-2" y="185" width="802" height="1" uuid="5964493d-8d76-438e-a3ef-9ce0b818064f"/>
+				<graphicElement>
+					<pen lineWidth="2.5" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="423" y="139" width="100" height="17" uuid="4538464f-19ee-4622-a09d-3651c3d2b381"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Santa Fé, Bogotá.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="156" width="182" height="17" uuid="30a965fe-9b62-4a33-ace6-7271e1c03b52"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[electricosestrada@gmail.com]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="755" y="-34" width="83" height="79" forecolor="#CC0000" backcolor="#CC0000" uuid="b8d06f33-593a-4e11-a3a7-04b87798fd0a"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="46" y="139" width="100" height="17" uuid="c22fd29c-709d-428a-98fa-7ce4752db6ce"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[3206257680]]></text>
+			</staticText>
+			<line>
+				<reportElement x="360" y="122" width="1" height="51" uuid="d11d8075-9bb4-4ed8-b370-40f662521381"/>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="701" y="93" width="99" height="20" forecolor="#FFFFFF" uuid="a95a29c1-a4cb-4b8e-abaa-dfe2d5d374ac"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="399" y="139" width="77" height="17" uuid="69759928-7208-4f20-b9a4-6f8fdcf3f985"/>
+				<imageExpression><![CDATA["map.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="585" height="132" uuid="de1b3260-67a5-44c7-8a56-036bdd234a00"/>
+				<imageExpression><![CDATA["logo_web.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="18" y="139" width="77" height="17" uuid="2a00fc15-bbc4-4a2e-80aa-00c4b5d93d97"/>
+				<imageExpression><![CDATA["phone.png"]]></imageExpression>
+			</image>
+			<ellipse>
+				<reportElement x="736" y="-22" width="32" height="34" forecolor="#666666" backcolor="#666666" uuid="bfc274a7-8858-4909-8af5-829543c99e04"/>
+			</ellipse>
+			<ellipse>
+				<reportElement x="739" y="-22" width="32" height="34" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="cc74c763-829a-4811-8df3-e8485e3fd616"/>
+			</ellipse>
+			<ellipse>
+				<reportElement x="800" y="24" width="32" height="34" forecolor="#666666" backcolor="#666666" uuid="9d180583-b6c4-42e8-84d1-b6ccc3badea9"/>
+			</ellipse>
+			<ellipse>
+				<reportElement x="802" y="24" width="32" height="34" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="e4ca41e4-d617-4c03-8e06-5f13e401f0ff"/>
+			</ellipse>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#666666" backcolor="#666666" uuid="06cfd9c6-32a2-4b61-a109-bc216484aa01"/>
+			</frame>
+			<staticText>
+				<reportElement style="Column header" x="4" y="2" width="132" height="18" forecolor="#FFFFFF" uuid="dd1e7e29-f4e1-444d-95ea-1880c53b2fe8"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Referencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="132" y="2" width="132" height="18" forecolor="#FFFFFF" uuid="3ad0c0ba-d417-4d19-b7d8-68b330fc638f"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="264" y="2" width="132" height="18" forecolor="#FFFFFF" uuid="a06c23f7-e0bc-46bb-b998-1d2a9b1cbff4"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="396" y="2" width="132" height="18" forecolor="#FFFFFF" uuid="9f056e0c-8154-4e0b-bab7-1e5e8cc45f70"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Categoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="528" y="2" width="132" height="18" forecolor="#FFFFFF" uuid="ebbd1222-1865-4075-97d7-b1997ce64c82"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="660" y="2" width="132" height="18" forecolor="#FFFFFF" uuid="3e8d02a6-066e-4a83-add5-1c433b10331a"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="79bb57e5-f6a5-44b7-99e1-94778d9662dd"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="132" height="18" uuid="b6ff9aa4-9e5a-4696-9f2a-e9c42976b081"/>
+					<textElement>
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_prod}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="132" y="0" width="132" height="18" uuid="1b463582-2c2c-478b-92a8-97956051e2ed"/>
+					<textElement>
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{prodnombre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="264" y="0" width="132" height="18" uuid="9f6afb0c-2f53-4673-a7c1-f9cfbaf11842"/>
+					<textElement>
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{prodstock_disp}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="396" y="0" width="132" height="18" uuid="bcb8e1f8-fd9b-45ae-b911-deea75884542"/>
+					<textElement>
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{catnombre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="528" y="0" width="132" height="18" uuid="56037974-8103-4532-b43e-bd6fae76f1fe"/>
+					<textElement>
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pronombre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="660" y="0" width="132" height="18" uuid="5eb1c15b-6493-439d-bb3c-abc6628ba101"/>
+					<textElement>
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{prodestado}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="797" height="1" uuid="433ce918-37c1-4350-8fe2-92aace59d5d9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<rectangle radius="7">
+				<reportElement x="0" y="0" width="802" height="30" forecolor="#ECECEC" backcolor="#CCCCCC" uuid="d8896e64-ed0c-409b-98ed-4242139f5b28"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="521" y="6" width="223" height="20" uuid="2af65ede-156a-4a79-89cb-36bbde7602f9"/>
+				<textElement>
+					<font fontName="SansSerif" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electricos Industriales Estrada E I E S.A.S]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
